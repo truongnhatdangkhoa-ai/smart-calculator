@@ -12,7 +12,8 @@
     "cap:add": "cap add android",
     "cap:sync": "npm run build && cap sync android",
     "cap:open": "cap open android",
-    "apk:debug": "npm run build && cap sync android && cd android && gradlew.bat assembleDebug"
+    "apk:debug": "npm run build && cap sync android && cd android && gradlew.bat assembleDebug",
+    "icons": "capacitor-assets generate --android"
   },
   "dependencies": {
     "@capacitor/core": "^7.0.0",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "@capacitor/android": "^7.0.0",
+    "@capacitor/assets": "^3.0.5",
     "@capacitor/cli": "^7.0.0",
     "@types/node": "^22.9.0",
     "@types/react": "^18.3.12",

@@ -51,3 +51,9 @@ rồi build APK lại.
 3. Khi xong, tải APK ở mục **Releases** (bên phải trang repo, bản "Bản mới nhất") hoặc ở **Artifacts** cuối trang lần chạy.
 4. Mỗi lần push mã mới, APK được build lại và cập nhật tự động.
 Nếu repo Private, Releases chỉ bạn xem được. Nếu thất bại, mở lần chạy lỗi, copy dòng đỏ gửi mình.
+
+## Logo / biểu tượng app
+Logo tự thiết kế (đường hình sin + trục tọa độ + chấm vàng), vẽ bằng hình học SVG, không dùng ảnh hay phông chữ của ai nên không vướng bản quyền. Nguồn ở `assets/` (`icon-only`, `icon-foreground`, `icon-background`, `splash`, cả .svg lẫn .png).
+- GitHub Actions tự tạo icon/splash cho Android từ thư mục này.
+- Build trên máy: sau `npx cap add android` chạy `npm run icons` rồi `npm run cap:sync`.
+- Muốn đổi logo: sửa các file `.svg`, xuất lại PNG cùng tên (1024×1024; splash 2732×2732).
