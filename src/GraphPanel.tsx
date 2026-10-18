@@ -12,6 +12,7 @@ const fmtN = (n: number): string => {
   const a = Math.abs(n);
   return a < 1e-4 || a >= 1e7 ? n.toExponential(3).replace(/\.?0+e/, 'e') : String(Number(n.toPrecision(6)));
 };
+const GRAPH_EXAMPLES = ['x^2', 'x^2 - 3x + 1', 'sin(x)', '1/x', 'ln(x)', 'sqrt(x)'];
 const VIEW_KEYS = ['xmin', 'xmax', 'ymin', 'ymax'] as const;
 const VIEW_LABEL: Record<(typeof VIEW_KEYS)[number], string> = { xmin: 'x nhỏ nhất', xmax: 'x lớn nhất', ymin: 'y nhỏ nhất', ymax: 'y lớn nhất' };
 
@@ -210,6 +211,12 @@ export default function GraphPanel({ theme, sep }: { theme: string; sep: '.' | '
           onChange={(e) => setSrc(e.target.value)} placeholder="ví dụ: x^2 − 3x + 1" aria-describedby="gerr" />
         <button type="submit" className="chip primary">Vẽ</button>
       </form>
+      <div className="gexamples" role="group" aria-label="Hàm mẫu để thử">
+        <span className="lbl">Thử:</span>
+        {GRAPH_EXAMPLES.map((ex) => (
+          <button key={ex} type="button" className="chip small" onClick={() => { setSrc(ex); setApplied(ex); setPicked(null); setMsg(null); }}>{ex}</button>
+        ))}
+      </div>
       <div id="gerr" role="alert" className="gerr">
         {!compiled.ok ? compiled.error.message : msg}
       </div>

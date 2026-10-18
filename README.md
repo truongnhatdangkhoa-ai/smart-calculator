@@ -50,3 +50,10 @@ Xem `ANDROID.md` (Capacitor, build APK trên Windows, chạy offline). Cấu hì
 
 ## Sao lưu lịch sử và bàn giao
 Panel Lịch sử có "Lưu file sao lưu / Sao chép sao lưu / Nhập từ file / Dán sao lưu". Xem `BAN_GIAO.md`.
+
+## Giao diện mới và thư viện công thức
+- Thanh dưới: Máy tính, Công thức, Đồ thị, Lịch sử. Cài đặt ở biểu tượng góc trên phải.
+- Tab Công thức: tìm không dấu (ví dụ "binh phuong"), nhóm Hằng đẳng thức, Lượng giác, Đại số, Hình học. Mở một thẻ, nhập số, kết quả hiện ngay kèm các bước.
+- Hằng đẳng thức: nhập số/phân số để kiểm tra hai vế; nhập chữ x (ví dụ a = 2x, b = 3) để khai triển chính xác theo x (một biến).
+- Lượng giác tính bằng số thực, sai khác dưới 1e-9 coi là bằng nhau và có ghi rõ. Hình học: kết quả có π ghi dạng chính xác (25π) kèm giá trị gần đúng.
+- Mã: `src/algebra/` (số hữu tỉ, đa thức, giải phương trình), `src/formulas/` (danh mục và bộ tính), kiểm thử trong `algebra.test.ts`, `formulas.test.ts`.
